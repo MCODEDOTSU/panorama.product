@@ -587,6 +587,9 @@ footer {
                 border: none;
                 color: $gray-200;
                 cursor: pointer;
+                &.btn-show-link {
+                    right: 60px;
+                }
                 &.btn-edit {
                     right: 30px;
                 }
