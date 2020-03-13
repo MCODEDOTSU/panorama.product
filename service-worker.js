@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.8cc692e4889a43a4d04e7f3a507153bb.js"
+  "/precache-manifest.3287a324aad9bf6ae980562f67d87a02.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "umgorod.front"});
