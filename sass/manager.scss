@@ -223,7 +223,167 @@ header {
     }
 }
 
+.top-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32px;
+    background: $first;
+    line-height: 1;
+    z-index: 11;
+
+    .top-menu-left {
+        display: inline-block;
+        vertical-align: middle;
+        width: 50%;
+    }
+
+    .top-menu-right {
+        display: inline-block;
+        vertical-align: middle;
+        width: 50%;
+        text-align: right;
+    }
+
+    .top-menu-item {
+
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+        line-height: 32px;
+        color: $white;
+        margin: 0 0 0 8px;
+        font-size: 14px;
+
+        label {
+            padding: 0;
+            margin: 0;
+
+            &.nav-link {
+                cursor: pointer;
+                @include transition(opacity 0.2s ease-out);
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+
+        &.contractor-logo {
+            width: 24px;
+            height: 32px;
+            padding: 4px 0;
+            line-height: 1;
+
+            img {
+                @include border-radius(50%);
+                max-width: 24px;
+                height: auto;
+            }
+        }
+
+        &.contractor-name {
+            font-weight: 700;
+        }
+
+        &.person-photo {
+            width: 24px;
+            height: 32px;
+            padding: 4px 0;
+            line-height: 1;
+
+            img {
+                @include border-radius(50%);
+                max-width: 24px;
+                height: auto;
+            }
+        }
+
+        &.person-logout {
+            margin: 0 16px;
+            line-height: 1;
+        }
+
+        button {
+            color: $white;
+            margin: 0;
+
+            i {
+                margin: 0;
+            }
+
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    }
+}
+
+.left-menu {
+    position: fixed;
+    width: 36px;
+    height: calc(100vh - 32px);
+    top: 32px;
+    left: 0;
+    background: $first;
+    z-index: 11;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        line-height: 1.5;
+        color: $white;
+
+        li {
+            padding: 8px;
+            cursor: pointer;
+
+            &:hover {
+                background: $first-hover;
+            }
+
+            &.router-link-active {
+                background: $second;
+                cursor: default;
+
+                &:hover {
+                    background: $second;
+                }
+            }
+
+            label {
+                margin: 0;
+                display: none;
+            }
+
+            i {
+                margin: 0 8px 0 0;
+            }
+        }
+    }
+
+    &.full {
+        width: 160px;
+        ul {
+            li {
+                label {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
 .manager {
+
+    padding: 0 0 0 48px;
+
+    &.left-menu-full {
+        padding: 0 0 0 160px;
+    }
 
     h1 {
         margin: 0;
@@ -300,7 +460,7 @@ header {
             text-align: right;
             line-height: 1;
             opacity: 0;
-            @include transition(opacity 0.5s ease-out);
+            @include transition(opacity 0.2s ease-out);
             button, .btn {
                 background: none;
                 border: none;
@@ -580,21 +740,6 @@ header {
                     font-size: 100%;
                     height: auto;
                 }
-                &.file-upload {
-                    [type="file"] {
-                        display: none;
-                    }
-                    .input-group {
-                        cursor: pointer;
-                        input {
-                            cursor: pointer;
-                        }
-                        .icon {
-                            width: 20px;
-                            height: 20px;
-                        }
-                    }
-                }
             }
 
             .input-group {
@@ -626,13 +771,14 @@ header {
     }
 }
 
-.modal-dialog-user {
-    .file-upload {
+.form-group {
+
+    &.file-upload {
         display: inline-block;
         vertical-align: top;
-        width: 172px;
-        height: 172px;
-        margin: 0 -177px 0 0;
+        width: 140px;
+        height: 140px;
+        margin-right: -145px;
         position: relative;
         z-index: 1;
         border: 1px solid $gray-200;
@@ -652,53 +798,62 @@ header {
 
         button {
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 32px;
-            height: 32px;
+            top: 3px;
+            right: 3px;
+            width: 24px;
+            height: 24px;
             background: none;
             border: none;
+            font-size: 24px;
+            line-height: 1;
+            text-shadow: 1px 0 0 rgba(255, 255, 255, 1);
         }
 
     }
+
+    .awesome-textarea {
+        background: $gray-200;
+        border: 1px solid $gray-400;
+        margin: 0 0 8px;
+        border-radius: 3px;
+        padding: 4px 8px;
+    }
+
+}
+
+.modal-body {
+    font-size: 12px;
+
+    label {
+        margin: 0 0 4px;
+    }
+
+    input {
+        font-size: 14px;
+        height: auto;
+        padding: 4px 8px;
+    }
+
+    textarea {
+        font-size: 14px;
+        height: auto;
+        padding: 4px 8px;
+    }
+
+    select {
+        font-size: 14px;
+        height: auto;
+        padding: 4px 8px;
+    }
+}
+
+.modal-dialog-user {
     .right-group {
         display: inline-block;
         vertical-align: top;
         width: 100%;
         padding: 0 0 0 204px;
         @include box-sizing(border-box);
-    }
-}
-
-.modal-dialog-contractor {
-
-    .file-upload {
-        position: relative;
-        border: 1px solid #ced4da;
-        padding: 3px;
-        @include border-radius(3px);
-        @include box-sizing(border-box);
-
-        img {
-            max-width: 100%;
-            height: auto;
-            cursor: pointer;
-        }
-
-        input[type="file"] {
-            display: none;
-        }
-
-        button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 32px;
-            height: 32px;
-            background: none;
-            border: none;
-        }
-
     }
 }
 
@@ -897,5 +1052,87 @@ header {
 
 #layerSelectModal___BV_modal_outer_ {
     z-index: 9999 !important;
+}
+
+.phones-list-items {
+    width: 100%;
+    margin: 8px 0;
+
+    tbody {
+        tr {
+            &:nth-child(2n - 1) {
+                background-color: $gray-200;
+            }
+            td {
+                padding: 4px 8px;
+            }
+        }
+    }
+
+    tfoot {
+        tr {
+            td {
+                padding: 4px 8px;
+            }
+        }
+    }
+
+    .cell-type {
+        width: 180px;
+        font-weight: 700;
+    }
+
+    .cell-action {
+        width: 40px;
+
+        button {
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
+            font-size: 14px;
+            -webkit-border-radius: 50% !important;
+            -moz-border-radius: 50% !important;
+            border-radius: 50% !important;
+        }
+    }
+}
+
+.note-list-items {
+    width: 100%;
+    margin: 8px 0;
+
+    td {
+        padding: 4px 8px;
+    }
+
+    tbody {
+        tr {
+            &:nth-child(2n - 1) {
+                background-color: $gray-200;
+            }
+        }
+
+        .cell-dt {
+            width: 180px;
+            font-weight: 700;
+        }
+    }
+
+    .cell-action {
+        width: 40px;
+        button {
+            width: 24px;
+            height: 24px;
+            padding: 0;
+            margin: 0;
+            line-height: 1;
+            font-size: 14px;
+            -webkit-border-radius: 50% !important;
+            -moz-border-radius: 50% !important;
+            border-radius: 50% !important;
+        }
+    }
 }
 
