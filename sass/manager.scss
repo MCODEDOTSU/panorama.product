@@ -1161,3 +1161,42 @@ header {
     }
 }
 
+.v-table {
+    .v-table-row {
+        cursor: pointer;
+        min-height: 30px;
+        height: auto !important;
+        line-height: 1.2;
+        .table-cell-content {
+            white-space: normal !important;
+            padding: 2px 0;
+        }
+    }
+}
+
+.table-dynamic-filter {
+    margin: 24px 0;
+    padding: 16px 16px 8px;
+    border: 1px solid $gray-200;
+    .form-control {
+        font-size: 12px;
+        padding: 4px;
+    }
+    .actions {
+        margin: -16px 0 0;
+    }
+}
+
+.vuetable-body-wrapper {
+    margin-top: 16px;
+    font-size: 13px;
+    min-width: 1300px;
+
+    .table th, .table td {
+        padding: 4px;
+        border-left: 1px solid #dee2e6;
+        &:last-child {
+            border-right: 1px solid #dee2e6;
+        }
+    }
+}
