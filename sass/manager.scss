@@ -289,15 +289,12 @@ header {
 
         &.person-photo {
             width: 24px;
-            height: 32px;
-            padding: 4px 0;
+            height: 24px;
+            margin: 3px;
             line-height: 1;
-
-            img {
-                @include border-radius(50%);
-                max-width: 24px;
-                height: auto;
-            }
+            @include border-radius(50%);
+            background-size: cover;
+            border: 1px solid $white;
         }
 
         &.person-logout {
@@ -439,12 +436,6 @@ header {
             .content {
                 margin: 20px 0;
             }
-        }
-
-        .manager-geom-data-container {
-            padding: 56px 0 0;
-            height: 100%;
-            min-height: 100vh;
         }
     }
 
