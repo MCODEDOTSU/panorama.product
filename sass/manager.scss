@@ -1310,6 +1310,7 @@ header {
             font-size: 14px;
             vertical-align: initial;
             margin: 0 0 0 16px;
+            color: $second;
         }
     }
 
@@ -1319,6 +1320,12 @@ header {
     }
     .actions {
         margin: -16px 0 0;
+        text-align: left;
+
+        .btn {
+            margin: 8px 0 0;
+            color: $gray-600;
+        }
     }
 }
 
