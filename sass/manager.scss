@@ -978,7 +978,7 @@ header {
 }
 
 .nav-tabs {
-    margin-bottom: 32px !important;
+    margin: 16px 0 !important;
 }
 
 .layer-items {
@@ -1390,5 +1390,46 @@ header {
         color: $white;
         text-shadow: none;
         font-weight: 100;
+    }
+}
+
+.desktop {
+    .desktop-container {
+        border: 1px solid $gray-300;
+        padding: 16px;
+        margin: 0 0 16px;
+        h4 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 64px;
+            margin: 8px 0;
+        }
+    }
+    .photo {
+        width: 48px;
+        height: 48px;
+        display: inline-block;
+        margin: 8px 4px 8px 0;
+        padding: 0;
+        @include border-radius(50%);
+        border: 1px solid $gray-300;
+    }
+    .date {
+        background: $second;
+        color: $white;
+        padding: 4px;
+        font-size: 14px;
+        line-height: 1;
+        @include border-radius(3px);
+    }
+    .phone {
+        background: $first;
+        color: $white;
+        padding: 2px 4px;
+        font-size: 14px;
+        line-height: 1;
+        @include border-radius(3px);
     }
 }
